@@ -17,11 +17,11 @@ console.log("1b ageDifference2: " + ageDifference2)
 //I used a loop function to find the total of all the ages, then divided all the ages by the amount of ages, finding the average age. The sum of all ages is 243 because
 // I pushed 13 into the array and 243/9 = 27.
 
-let all = 0;
+let agesTotal = 0;
 for(let i = 0; i < ages.length; i++) {
-    all += ages[i];
+    agesTotal += ages[i];
 }
-let average = all/ ages.length;
+let average = agesTotal / ages.length;
 console.log("1c average: " + average)
 
 //2.  Create an array called names that contains the following values: 'Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'.
@@ -32,7 +32,7 @@ let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob']
 
 let letterCount = 0;
 for(let i = 0; i < names.length; i++) {
-    letterCount += names[i].length;
+    letterCount += names[i].length; //gets length of name
 }
 let avgNumLetters = letterCount/ names.length;
 console.log("2a avgNumLetters: " + avgNumLetters)
@@ -41,15 +41,15 @@ console.log("2a avgNumLetters: " + avgNumLetters)
 // I used a for loop to add each name to the variable allNames and created a space after each name by concatenating quotes with a space in it.
 let allNames = "";
 for(let i = 0; i < names.length; i++) {
-    allNames += names[i] + " ";
+    allNames += names[i] + " "; //concatenating each name into allNames with a space after the name
 }
 console.log("2b allNames: " +  allNames)
 
 //3.  How do you access the last element of any array?
-console.log("3. When you subtract one from the length of the array, you are accessing the last number. array[array.length - 1]")
+console.log("3. When you subtract one from the length of the array, you are accessing the last number. array[array.length - 1] because an array's index starts at 0") 
 
 //4.  How do you access the first element of any array?
-console.log("4. By using 0, you are accessing the first element of the array. array[0]")
+console.log("4. By using 0, you are accessing the first element of the array because an array's index starts at 0. array[0]")
 
 //5.  Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
 //I wrote a for loop to add the length of each name to the nameLengths array using the push function.
@@ -101,12 +101,12 @@ console.log("9 isGreaterThan100: " + isGreaterThan100([53,37,52,14]))
 
 //10.  Write a function that takes an array of numbers and returns the average of all the elements in the array.
 // In this function I used a for loop to find the total of the numbers in the array, then divided the total by the amount of numbers in the array to find the average.
-function averageOfElements(anArray){
+function averageOfElements(numArray){
     let elements = 0;
-    for(let i = 0; i < anArray.length; i++){
-        elements += anArray[i];
+    for(let i = 0; i < numArray.length; i++){
+        elements += numArray[i];
     }
-    return elements/ anArray.length; 
+    return elements / numArray.length; 
 }
 console.log("10 averageOfElements: " + averageOfElements([5,10,15,20]))
 
@@ -129,64 +129,7 @@ console.log("12 willBuyDrink: " + willBuyDrink(true,11.50))
 //I created a function to find out if my cat is hungry by factoring in if he has had exerciseToday(true or false) and how many hoursSinceFed if over 12 hours. If both are true, then the cat
 //is hungry.
 function isCatHungry(exerciseToday,hoursSinceFed){
-    return exerciseToday && hoursSinceFed > 12
+    return exerciseToday || hoursSinceFed > 12
 }
-console.log("13 isCatHungry: " + isCatHungry(false,6))
+console.log("13 isCatHungry: " + isCatHungry(true,6))
 
-/*
-let all = 0;
-for(let i = 0; i < ages.length; i++) {
-    all += ages[i];
-}
-let average = all/ ages.length;
-console.log("1c answer: " + average)
-
-
-
-1.  Create an array called ages that contains the following values: 3, 9, 23, 64, 2, 8, 28, 93.
-
-1a.Programmatically subtract the value of the first element in the array from the value in the last element of the array.   
-Do not use numbers to reference the last element, find it programmatically.
-ages[7] – ages[0] is not allowed!
-1b. Add a new age to your array and repeat the step above to ensure it is dynamic. (works for arrays of different lengths).
-1c. Use a loop to iterate through the array and calculate the average age. 
-2.  Create an array called names that contains the following values: 'Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'.
-2a. Use a loop to iterate through the array and calculate the average number of letters per name. 
-2b. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces. 
-3.  How do you access the last element of any array?
-
-4.  How do you access the first element of any array?
-
-5.  Create a new array called nameLengths. Write a loop to iterate over the previously created names array and add the length of each name to the nameLengths array.
-
-For example:
-
-let names = ["Kelly", "Sam", "Kate"];    // starting with this array
-let nameLengths = [5, 3, 4];             // create a new array
-
-6.  Write a loop to iterate over the nameLengths array and calculate the sum of all the elements in the array. 
-
-
-7.  Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in 'Hello' and 3, I would expect the function to return 'HelloHelloHello').
-
-
-8.  Write a function that takes two parameters, firstName and lastName, and returns a full name.  The full name should be the first and the last name separated by a space.
-
-
-
-9.  Write a function that takes an array of numbers and returns true if the sum of all the numbers in the array is greater than 100.
-
-
-10.  Write a function that takes an array of numbers and returns the average of all the elements in the array.
-
-
-11.  Write a function that takes two arrays of numbers and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
-
-
-12.  Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
-
-
-13.  Create a function of your own that solves a problem. 
-
-In comments, write what the function does and why you created it.
-*/
